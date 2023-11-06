@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Praktikum Pemweb 4</title>
+</head>
+
+<body>
+    <!-- Nama  = Ignatius Julio Bintang Regen-->
+    <!-- NIM   = 121140192-->
+    <!-- Kelas = RC-->
+    <script>
+        function perhitungan(){
+            let nilai_input = document.getElementById("input").value;
+            let jmlh_ganjil = 0;
+            let jmlh_genap = 0;
+            let total_ganjil = 0;
+            let total_genap = 0;
+
+            if(nilai_input < 0){
+                alert("Masukkan nilai lebih dari sama dengan 0")
+            }else{
+                for(let i=1;i<=nilai_input;i++){
+                    if(i % 2 == 0){
+                        jmlh_genap++;
+                        total_genap +=1;
+                    }else{
+                        jmlh_ganjil++;
+                        total_ganjil +=1;
+                    }
+                }
+                let hasil_perhitungan = "<br>" + "Hasil :" + "<br> <br>" + "Jumlah bilangan ganjil: " + total_ganjil + "<br> <br>" + "Jumlah bilangan genap: " + total_genap;
+                document.getElementById("hasil_perhitungan").innerHTML = hasil_perhitungan;
+            }
+        }
+    </script>
+
+    <h1>Menghitung Bilangan Ganjil dan Genap</h1>
+    <p>Masukkan bilangan bulat positif : </p>
+    <input type="number" id="input" min="1">
+    <button onclick="perhitungan()">Hitung</button>
+    <span id="hasil_perhitungan"></span>
+
+</body>
+</html>
